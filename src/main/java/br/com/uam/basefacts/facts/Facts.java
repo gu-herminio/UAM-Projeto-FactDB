@@ -6,12 +6,15 @@ import jakarta.persistence.*;
 @Table
 public class Facts {
 
+    // Definir que o ID é a chave primária
     @Id
+    // Gerar um sequencial
     @SequenceGenerator(
             name= "facts_sequence",
             sequenceName = "facts_sequence",
             allocationSize = 1
     )
+    // Gerar o ID e defini-lo como sequencial pelo banco de dados (Postgres)
     @GeneratedValue(
             strategy= GenerationType.SEQUENCE,
             generator = "facts_sequence"
