@@ -22,6 +22,7 @@ public class Facts {
     private Long id;
     private String url;
     private String userEmail;
+
     @Transient
     private boolean check;
 
