@@ -38,7 +38,7 @@ public class FactsService {
 
 
     @Transactional // This annotation is used to indicate that this method will be used to update the facts.
-    public void updateFacts(Long factsId, String url, String userEmail) {
+    public void updateFacts(Long factsId, String url, String email) {
         Facts facts = factsRepository.findById(factsId)
             .orElseThrow(() -> new IllegalStateException(
                     "facts with id " + factsId + " does not exist"
@@ -47,9 +47,9 @@ public class FactsService {
                 !url.isEmpty()) {
             facts.setUrl(url);
         }
-        if(userEmail != null &&
-                !userEmail.isEmpty()) {
-            facts.setUserEmail(userEmail);
+        if(email != null &&
+                !email.isEmpty()) {
+            facts.setUserEmail(email);
         }
 
     }

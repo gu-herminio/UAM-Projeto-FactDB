@@ -36,9 +36,9 @@ public class FactsController {
     @PutMapping(path = "{factsId}")
     public void updateFacts(
             @PathVariable("factsId") Long factsId,
-            @RequestParam(required = false) String url,
-            @RequestParam(required = false) String email){
-        factsService.updateFacts(factsId, url, email);
+            @RequestParam(required = false) String url, // Precisa ser exatamente igual ao nome do atributo da classe.
+            @RequestParam(required = false) String userEmail){ // Precisa ser exatamente igual ao nome do atributo da classe.
+        factsService.updateFacts(factsId, url, userEmail);
     }
 
 }
